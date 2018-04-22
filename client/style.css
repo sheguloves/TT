@@ -1,0 +1,96 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-size: 15px;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+}
+
+input {
+    width: 100%;
+}
+.content {
+    width: 1100px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.message {
+    width: 1000px;
+}
+
+.message .success,
+.message .error {
+    padding: 5px 10px;
+}
+
+.message .success {
+    background-color: #dff0d8;
+}
+
+.message .error {
+    background-color: #f2dede;
+}
+
+.checkbox-col {
+    width: 20px;
+}
+
+.editable,
+.clickable {
+    cursor: pointer;
+}
+
+.editable,
+.clickable .theader{
+    text-decoration: underline;
+}
+
+.sortby:after {
+    content: '\25BC';
+}
+
+.sortby.reverse:after {
+    content: '\25B2';
+}
+
+.table {
+    table-layout: fixed;
+    width: 1000px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>td {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button-group {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+

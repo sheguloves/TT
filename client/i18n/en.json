@@ -1,0 +1,19 @@
+{
+    "Delete": "Delete",
+    "Add": "Add",
+    "Update": "Update",
+    "ID": "ID",
+    "NAME": "Name",
+    "LOCATION": "Location",
+    "OFFICE": "Office",
+    "PHONE": "Phone",
+    "PHONE_OFFICE": "Office",
+    "PHONE_CELL": "Cell",
+    "DELETE_SUCCESS": "Delete Success",
+    "DELETE_FAILED": "Delete Failed: ",
+    "UPDATE_SUCCESS": "Update Success",
+    "UPDATE_FAILED": "Update Failed: ",
+    "ADD_SUCCESS": "Add Success",
+    "ADD_FAILED": "Add Failed: ",
+    "LOADING_ADDRESSES_FAILED": "Loading Addresses Failed: "
+}

@@ -1,0 +1,58 @@
+<div class="content">
+    <div ng-show="$messages.length > 0" class="message">
+        <div ng-repeat="message in $messages" ng-class="{'error': message.error, 'success': !message.error}">{{message.message | translate}}</div>
+    </div>
+    <div class="table-container">
+        <table class="table">
+            <caption>Address Book</caption>
+            <thead>
+                <tr ng-repeat="head in tableHeaders track by $index">
+                    <th class="checkbox-col" ng-if="checkable && $index === 0" rowspan="{{tableHeaders.length}}"><input type="checkbox" ng-model="ctrl.allChecked" ng-change="onCheckedAllChange()" ng-disabled="addresses.length <= 0"></th>
+                    <th ng-repeat="sub in head" cust-table-head="sub" predicate="{{predicate}}" reverse="reverse" ng-click="onHeadClick(sub.sortBy)">
+                        <span class="theader">{{sub.label | translate}}</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in addresses | orderBy:predicate:reverse" ng-dblclick="onCellDBClick(address, $event)">
+                    <td ng-if="checkable"><input type="checkbox" ng-model="address.selected" ng-change="onRowSelectionChange()"></td>
+                    <td title="{{address.id}}">
+                        {{address.id}}
+                    </td>
+                    <td title="{{address.name}}" class="editable">
+                        <span ng-if="editRow !== address">{{address.name}}</span>
+                        <input ng-if="editRow === address" ng-model="address.name" ng-change="address.dirty = true;">
+                    </td>
+                    <td title="{{address.location}}" class="editable">
+                        <span ng-if="editRow !== address">{{address.location}}</span>
+                        <input ng-if="editRow === address" ng-model="address.location" ng-change="address.dirty = true;">
+                    </td>
+                    <td title="{{address.office}}" class="editable">
+                        <span ng-if="editRow !== address">{{address.office}}</span>
+                        <input ng-if="editRow === address" ng-model="address.office" ng-change="address.dirty = true;">
+                    </td>
+                    <td title="{{address.phone.office}}" class="editable">
+                        <span ng-if="editRow !== address">{{address.phone.office}}</span>
+                        <input ng-if="editRow === address" ng-model="address.phone.office" ng-change="address.dirty = true;">
+                    </td>
+                    <td title="{{address.phone.cell}}" class="editable">
+                        <span ng-if="editRow !== address">{{address.phone.cell}}</span>
+                        <input ng-if="editRow === address" ng-model="address.phone.cell" ng-change="address.dirty = true;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <div class="button-group">
+                            <div><button ng-click="onDeleteClick()">{{'Delete' | translate}}</button></div>
+                            <div>
+                                <button ng-click="onUpdateClick()" class="mr10">{{'Update' | translate}}</button>
+                                <button ng-click="onAddClick()">{{'Add' | translate}}</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
